@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一起来玩井子棋</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div id="title">林爷井子棋</div>
+    </div>
+    <div id="main">
+        <div id="app">
+            <span  @click="change0" v-bind:class="list == 1 ? white : (list == 2 ? black : 0)" ></span>
+            <span  @click="change1" v-bind:class="list1 == 1 ? white : (list1 == 2 ? black : 0)" ></span>
+            <span  @click="change2" v-bind:class="list2 == 1 ? white : (list2 == 2 ? black : 0)" ></span>
+            <span  @click="change3" v-bind:class="list3 == 1 ? white : (list3 == 2 ? black : 0)" ></span>
+            <span  @click="change4" v-bind:class="list4 == 1 ? white : (list4 == 2 ? black : 0)" ></span>
+            <span  @click="change5" v-bind:class="list5 == 1 ? white : (list5 == 2 ? black : 0)" ></span>
+            <span  @click="change6" v-bind:class="list6 == 1 ? white : (list6 == 2 ? black : 0)" ></span>
+            <span  @click="change7" v-bind:class="list7 == 1 ? white : (list7 == 2 ? black : 0)" ></span>
+            <span  @click="change8" v-bind:class="list8 == 1 ? white : (list8 == 2 ? black : 0)" ></span>
+        </div>
+    </div> 
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                white: "white",
+                black: "black",
+                counter: true,
+                number: 0,
+                whiteWin: [],
+                blackWin: [],
+                list: "",
+                list1: "",
+                list2: "",
+                list3: "",
+                list4: "",
+                list5: "",
+                list6: "",
+                list7: "",
+                list8: "",
+            },
+            methods: {
+                change0() {
+                    if(this.list == "") {
+                        if (this.counter == true){
+                            this.list = 1
+                            this.whiteWin.push(1)
+                        } else if (this.counter == false) {
+                            this.list = 2
+                            this.blackWin.push(1)
+                        }
+                        this.counter = !this.counter
+                        this.number++
+                        (this.number%2 == 1) ? this.whoWin(this.whiteWin) : this.whoWin(this.blackWin)
+                    }
+                },
+                change1() {
+                    if(this.list1 == "") {
+                        if (this.counter == true){
+                            this.list1 = 1
+                            this.whiteWin.push(2)
+                        } else if (this.counter == false) {
+                            this.list1 = 2
+                            this.blackWin.push(2)
+                        }
+                        this.counter = !this.counter
+                        this.number++
+                        (this.number%2 == 1) ? this.whoWin(this.whiteWin) : this.whoWin(this.blackWin)
+                    }
+                },
+                change2() {
+                    if(this.list2 == "") {
+                        if (this.counter == true){
+                            this.list2 = 1
+                            this.whiteWin.push(3)
+                        } else if (this.counter == false) {
+                            this.list2 = 2
+                            this.blackWin.push(3)
+                        }
+                        this.counter = !this.counter
+                        this.number++
+                        (this.number%2 == 1) ? this.whoWin(this.whiteWin) : this.whoWin(this.blackWin)
+                    }
+                },
+                change3() {
+                    if(this.list3 == "") {
+                        if (this.counter == true){
+                            this.list3 = 1
+                            this.whiteWin.push(4)
+                        } else if (this.counter == false) {
+                            this.list3 = 2
+                            this.blackWin.push(4)
+                        }
+                        this.counter = !this.counter
+                        this.number++
+                        (this.number%2 == 1) ? this.whoWin(this.whiteWin) : this.whoWin(this.blackWin)
+                    }
+                },
+                change4() {
+                    if(this.list4 == "") {
+                        if (this.counter == true){
+                            this.list4 = 1
+                            this.whiteWin.push(5)
+                        } else if (this.counter == false) {
+                            this.list4 = 2
+                            this.blackWin.push(5)
+                        }
+                        this.counter = !this.counter
+                        this.number++
+                        (this.number%2 == 1) ? this.whoWin(this.whiteWin) : this.whoWin(this.blackWin)
+                    }
+                },
+                change5() {
+                    if(this.list5 == "") {
+                        if (this.counter == true){
+                            this.list5 = 1
+                            this.whiteWin.push(6)
+                        } else if (this.counter == false) {
+                            this.list5 = 2
+                            this.blackWin.push(6)
+                        }
+                        this.counter = !this.counter
+                        this.number++
+                        (this.number%2 == 1) ? this.whoWin(this.whiteWin) : this.whoWin(this.blackWin)
+                    }
+                },
+                change6() {
+                    if(this.list6 == "") {
+                        if (this.counter == true){
+                            this.list6 = 1
+                            this.whiteWin.push(7)
+                        } else if (this.counter == false) {
+                            this.list6 = 2
+                            this.blackWin.push(7)
+                        }
+                        this.counter = !this.counter
+                        this.number++
+                        (this.number%2 == 1) ? this.whoWin(this.whiteWin) : this.whoWin(this.blackWin)
+                    }
+                },
+                change7() {
+                    if(this.list7 == "") {
+                        if (this.counter == true){
+                            this.list7 = 1
+                            this.whiteWin.push(8)
+                        } else if (this.counter == false) {
+                            this.list7 = 2
+                            this.blackWin.push(8)
+                        }
+                        this.counter = !this.counter
+                        this.number++
+                        (this.number%2 == 1) ? this.whoWin(this.whiteWin) : this.whoWin(this.blackWin)
+                    }
+                },
+                change8() {
+                    if(this.list8 == "") {
+                        if (this.counter == true){
+                            this.list8 = 1
+                            this.whiteWin.push(9)
+                            console.log(this.s)
+                        } else if (this.counter == false) {
+                            this.list8 = 2
+                            this.blackWin.push(9)
+                            console.log(this.blackWin)
+                        }
+                        this.counter = !this.counter
+                        this.number++
+                        (this.number%2 == 1) ? this.whoWin(this.whiteWin) : this.whoWin(this.blackWin)
+                    }
+                },
+                whoWin(s) {
+                    let a = "白赢！！！";
+                    let b = "黑赢！！！";
+                    let c;
+                    if (this.number%2 == 1) {
+                        c = a
+                    } else {
+                        c = b
+                    }
+                    if (this.number < 5) {
+                        return
+                    }
+                    if (s.indexOf(1) !== -1) {
+                        if (s.indexOf(2) !== -1 && s.indexOf(3) !== -1) {
+                            alert(c)
+                            return location.reload()
+                        } else if (s.indexOf(4) !== -1 && s.indexOf(7) !== -1) {
+                            alert(c)
+                            return location.reload()
+                        } else if (s.indexOf(5) !== -1 && s.indexOf(9) !== -1) {
+                            alert(c)
+                            return location.reload()
+                        }
+                    }
+                    if (s.indexOf(2) !== -1 && s.indexOf(5) !== -1 && s.indexOf(8) !== -1) {
+                        alert(c)
+                        return location.reload()
+                    }
+                    if (s.indexOf(3) !== -1 && s.indexOf(6) !== -1 && s.indexOf(9) !== -1) {
+                        alert(c)
+                        return location.reload()
+                    } else if (s.indexOf(3) !== -1 && s.indexOf(5) !== -1 && s.indexOf(7) !== -1) {
+                        alert(c)
+                        return location.reload()
+                    }
+                    if (s.indexOf(4) !== -1 && s.indexOf(5) !== -1 && s.indexOf(6) !== -1) {
+                        alert(c)
+                        return location.reload()
+                    }
+                    if (s.indexOf(7) !== -1 && s.indexOf(8) !== -1 && s.indexOf(9) !== -1) {
+                        alert(c)
+                        return location.reload()
+                    }
+                    if (this.number == 9) {
+                        alert("平局")
+                        return location.reload()
+                    }
+                }
+            }
+        })
+    </script>
+    <style>
+        #main{
+            display: flex;
+            justify-content: center;
+        }
+        #app{
+            background-color: #eee;
+            width: 600px;
+            height: 600px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        #title{
+            font-size: 30px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 200px;
+            background-color: #888;
+        }
+        span{
+            border: 1px #ddd solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 198px;
+            height: 198px;
+        }
+        .white{
+            border-radius: 50%;
+            background-color: #fff;
+        }
+        .black{
+            border-radius: 50%;
+            background-color: #000;
+        }
+    </style>
+</body>
+</html>
